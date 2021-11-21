@@ -88,7 +88,7 @@ namespace HOT.MessageWin
                 inParam.add(passWord);
                 //调用登录接口
                 string body = inParam.innerText;
-                string postUrl = "http://192.168.161.65/HOTApi/Login";
+                string postUrl = "登录接口";
                 Log.AddTrack("HOT.MessageWin.Confirm.OK_Click", "开始调用登录接口：" + body);
                 string outParam = HttpService.Post(body, postUrl, false, 6);
                 Log.AddTrack("HOT.MessageWin.Confirm.OK_Click", "登录接口返回：" + outParam);
@@ -110,7 +110,7 @@ namespace HOT.MessageWin
                         //MessageBox.Show("登录成功！");
                         string Userid = loginMessage["UserInfo"]["Userid"].ToString();//获取操作人
                         Log.AddTrack("HOT.MessageWin.Confirm.OK_Click", "开始扣除执行次数...");
-                        string sqlStr = "update tReceiptCheck SET RestExcutCount = @RestCount where ReceiptCheckID = @ReceiptCheckID";
+                        string sqlStr = "sql语句";
                         SqlParameter[] par = { 
                             new SqlParameter("@ReceiptCheckID", ReceiptCheckID) ,
                             new SqlParameter("@RestCount",RestCount)
@@ -119,9 +119,7 @@ namespace HOT.MessageWin
                         if(i > 0)
                         {
                             Log.AddTrack("HOT.MessageWin.Confirm.OK_Click", "扣除成功!开始记录操作者日志...");
-                            sqlStr = "INSERT INTO [dbo].[t_ReceiptCheckTrack] " +
-                                     "([UserID], [ReceiptCheckID], [OperationTime], [OperationCount], [Others],[itemName],[registerID]) " +
-                                     "VALUES (@UserID, @ReceiptCheckID, @OperationTime, @OperationCount,@Ohters,@itemName,@registerid);";
+                            sqlStr = "sql语句";
                             SqlParameter[] par2 =
                             {
                                 new SqlParameter("@UserID",Userid),

@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="HOT.exe.manifest" size="6912">
+    <dependentAssembly dependencyType="install" codebase="HOT.exe.manifest" size="6911">
       <assemblyIdentity name="HOT.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gYDSyYxqptg2gludWYDz/Pt3ryxXWF3d8IWlsSQZlwE=</dsig:DigestValue>
+        <dsig:DigestValue>oBr2v04IQWcSfFXBwr+lJ6u2mIWPH3P12PBCFcVQ3Yk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

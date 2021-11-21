@@ -51,16 +51,7 @@ namespace HOT.View
             try
             {
                 if (txt_search_input.Text == "")
-                {/*
-                    MyCustomControlLibrary.MMessageBox.ShowAlert(
-                               "就诊码不允许为空！", //提示内容
-                                Orientation.Horizontal,
-                                null, //图标
-                               "#3ca9fe", //画笔颜色
-                                false,
-                                true,
-                                10);
-                    */
+                {
                     MessageBox.Show("就诊码不允许为空!");
                 }
                 else {
@@ -71,16 +62,7 @@ namespace HOT.View
                         DataSet qry = ssh_GetData.ExecSelectStoredProcedure("checkReceipt", par);
                         if (qry.Tables.Count == 1 && qry.Tables[0].Rows.Count == 0)
                         {
-                            // MessageBox.Show("查不到该患者的收据记录！");
-                            
-                            MyCustomControlLibrary.MMessageBox.ShowAlert(
-                                "Success!", //提示内容
-                                 Orientation.Horizontal,
-                                 null, //图标
-                                "#3ca9fe", //画笔颜色
-                                 false,
-                                 true,
-                                 3); //
+                           
                             txt_search_input.Text = "";
                         }
                         else
@@ -88,10 +70,7 @@ namespace HOT.View
                             dataGrid.DataContext = qry.Tables[0];
 
                             //同时查操作记录
-                            string sqlStr = "SELECT b.UserName,b.deptName,a.OperationTime,a.OperationCount,a.Others,a.itemName, a.registerid " +
-                                         "FROM[dbo].[t_ReceiptCheckTrack] a,T_User b " +
-                                         "where a.UserID = b.Userid " +
-                                         "and a.registerid = @RegisterID";
+                            string sqlStr = "sql语句";
                             SqlParameter[] par2 = { new SqlParameter("@RegisterID", txt_search_input.Text) };
                             DataSet qry2 = ssh_HOT.SelectData(sqlStr, par2);
                             if (qry2.Tables.Count == 1 && qry2.Tables[0].Rows.Count == 0)
@@ -181,10 +160,7 @@ namespace HOT.View
                     int RestExcutCount;//剩余执行次数
                     Log.AddTrack("HOT.View.UC_SearchData.MoveDataFromOP", "数据不存在，准备转移数据topaccountlist => trecepitcheck");
                     RestExcutCount = Convert.ToInt32(drv["Quantity"]);
-                    string sqlStr2 = "INSERT INTO [tReceiptCheck] " +
-                                     "([RegisterID], [ReceiptID], [name], [Quantity], [FeeKindName], " +
-                                     "[DepartmentName], [RestExcutCount], [OPAccountListID]) " +
-                                     "VALUES(@RegisterID, @ReceiptID, @name, @Quantity, @FeeKindName, @DepartmentName, @RestExcutCount, @OPAccountListID); ";
+                    string sqlStr2 = "sql语句 ";
                     SqlParameter[] par2 = {
                         //可能报错，调试注意
                         new SqlParameter("@RegisterID", drv["RegisterID"]) ,
@@ -261,7 +237,7 @@ namespace HOT.View
 
         private string GetReceiptCheckID(string OPAccountListID)
         {
-            string sqlstr = "SELECT ReceiptCheckID from tReceiptCheck where OPAccountListID = @OPAccountListID";
+            string sqlstr = "sql语句";
             SqlParameter[] par = { new SqlParameter("@OPAccountListID", OPAccountListID) };
             DataSet qry = ssh_GetData.SelectData(sqlstr, par);
             string ReceiptCheckID;
@@ -308,8 +284,7 @@ namespace HOT.View
             Log.AddTrack("HOT.View.UC_SearchData.getPatientData", "Begin");
                 try
                 {
-                    string sqlStr = "select a.registerdate,a.seqno,b.patientname from op..tregister a,op..tpatient b "
-                                  + "where a.patientid = b.patientid and a.RegisterID = @RegisterID";
+                    string sqlStr = "sql语句";
                     SqlParameter[] par = { new SqlParameter("@RegisterID", txt_search_input.Text.Trim()) };
                     DataSet qry = ssh_OP.SelectData(sqlStr, par);
                     //查询不到数据
@@ -317,14 +292,7 @@ namespace HOT.View
                     {
                     //MessageBox.Show("找不到患者基本信息");
                     
-                    MyCustomControlLibrary.MMessageBox.ShowAlert(
-                            "找不到患者基本信息", //提示内容
-                             Orientation.Horizontal,
-                             null, //图标
-                            "#3ca9fe", //画笔颜色
-                             false,
-                             true,
-                             3);
+                   
 
                         Log.AddError("HOT.View.UC_SearchData.getPatientData", "找不到患者的挂号信息：registerid：" + txt_search_input.Text);
                         Log.AddTrack("HOT.View.UC_SearchData.getPatientData", "End");

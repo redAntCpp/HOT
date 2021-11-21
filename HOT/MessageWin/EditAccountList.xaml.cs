@@ -37,8 +37,7 @@ namespace HOT.MessageWin
             {
                 ConnetionString = HOTConfig.GetConfig().GetGetDataConnetionString()
             };
-            string sqlStr = "select ReceiptCheckID,RegisterID, name,RestExcutCount,DepartmentName from [dbo].[tReceiptCheck] " +
-                            "where ReceiptCheckID = @ReceiptCheckID";
+            string sqlStr = "sql语句";
             SqlParameter[] par = { new SqlParameter("@ReceiptCheckID", ReceiptCheckID) };
             DataTable dt = ssh_GetData.SelectData(sqlStr, par).Tables[0];
             this.Name.Text = dt.Rows[0]["name"].ToString();

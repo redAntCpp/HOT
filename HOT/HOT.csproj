@@ -120,12 +120,6 @@
     <Compile Include="MessageWin\EditAccountList.xaml.cs">
       <DependentUpon>EditAccountList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TabTestWin.xaml.cs">
-      <DependentUpon>TabTestWin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UC_OPPatientCaseHistory.xaml.cs">
-      <DependentUpon>UC_OPPatientCaseHistory.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\UC_PatientCaseInfo.xaml.cs">
       <DependentUpon>UC_PatientCaseInfo.xaml</DependentUpon>
     </Compile>
@@ -161,14 +155,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MessageWin\EditAccountList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TabTestWin.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\UC_OPPatientCaseHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
