@@ -1,0 +1,78 @@
+﻿<Window x:Class="HOT.MessageWin.Confirm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HOT.MessageWin"
+        xmlns:microtools="clr-namespace:MicroTools;assembly=MicroTools"
+        mc:Ignorable="d"
+        Title="编辑明细" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None" Closed="Window_Closed">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Name="main_toolbar" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" MouseLeftButtonDown="main_toolbar_MouseLeftButtonDown">
+            <microtools:ImageButton NormalImagePath="/HOT;component/Resources/Images/login/close.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/toolbar/close_hover.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/login/close.png"
+                                        ImageSize="25" Margin="0 0 6 0" Click="Btn_CloseWindow_Click" 
+                                        ToolTip="关闭"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <StackPanel x:Name="test" Orientation="Vertical">
+                <Label Content="授权确认"  Padding="25 0 0 0" VerticalContentAlignment="Center"   Height="40" FontSize="22" HorizontalContentAlignment="Center"/>
+
+                <StackPanel  Orientation="Horizontal">
+                    <Label Content="账号：" FontSize="20" Margin="20,40,0,0"/>
+                    <TextBox x:Name="Name" Height="40" Width="270"                        
+                          VerticalContentAlignment="Center"
+                          Margin="10,40,0,0" FontSize="16" FontWeight="Bold"
+                          
+                          
+                         />
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <Label Content="密码：" FontSize="20" Margin="20,40,0,0"/>
+                    <PasswordBox x:Name="Password" Height="40" Width="270" 
+                         HorizontalAlignment="Center"   
+                         VerticalAlignment="Center"
+                         VerticalContentAlignment="Center"
+                         Margin="10,40,0,0" 
+                         FontSize="16"
+                         />
+                </StackPanel>
+
+
+                <StackPanel  Orientation="Horizontal">
+                    <Button x:Name="OK"  Height="35" Width="90"
+                         Background="#87CEFA"
+                         FontSize="20" Cursor="Hand"
+                         IsDefault="True"
+                         Content="确定"  
+                         HorizontalAlignment="Center"   
+                         VerticalAlignment="Center"
+                         VerticalContentAlignment="Center"
+                            Margin="100,40,0,0" Click="OK_Click"
+                        />
+                    <Button x:Name="Cancel"  Height="35" Width="90"
+                         Background="#87CEFA"
+                         FontSize="20" Cursor="Hand"
+                         IsDefault="True"
+                         Content="取消"  
+                         HorizontalAlignment="Center"   
+                         VerticalAlignment="Center"
+                         VerticalContentAlignment="Center"
+                            Margin="30,40,0,0"
+                        />
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
+

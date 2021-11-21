@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="HOT.exe" version="1.0.0.1" publicKeyToken="65ac5a5ddbfe3305" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="HOT.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="HOT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="HOT.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HOT.exe" size="824248">
+      <assemblyIdentity name="HOT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>QkIrobtAuyH8508IHP2LF/aDOLNEPYPSuyq29XG/tWI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HOTControlLibrary.dll" size="28672">
+      <assemblyIdentity name="HOTControlLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>QDTUv+ntGhJgKb/JKeKqrJay6waADl4N0KbaXgu2u2E=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MicroTools.dll" size="15360">
+      <assemblyIdentity name="MicroTools" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>rAYOumb31pPVbMZ4j1sTuTzpviISW0gj3R7c775gCh0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MyCustomControlLibrary.dll" size="201216">
+      <assemblyIdentity name="MyCustomControlLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6wQ6lzDIvO4ZOf/oueJveyXtGq+7INhbC+lVOs6Zwgw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="701992">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tiSUnfiw46YVP9+3MKfG9JkLZZLuDZIuF4hDPSdmEPM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="HOT.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="HOT.ico" size="4286">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0N/aXKMpx9FycNmvBx3QuVMceO6M9OlXNoevvlitCmY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="HOTControl\HOTControlLibrary.dll" size="28672">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QDTUv+ntGhJgKb/JKeKqrJay6waADl4N0KbaXgu2u2E=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=HISSOFT\doctor" issuerKeyHash="03d565b8f69582b1a789a4cd78f6991bbe7c2934" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>3cMSxx+3xRXiSNoG8acB6Em8bDk2HtROF2y8nkvUC2k=</DigestValue></Reference></SignedInfo><SignatureValue>DT+MPQVSi/7V7H1OVPMiz0AHG30TJ5Z/ImbleTvMcKtEOlt8IUNoAiODjkQJqbn2160iUoOyzovuhU2JkHdZYNFne4f+74/jKi0rDzmK6zIrKZRF9Z9Z4fI49oCUTIF1eN8ngDYZEjvF10u9xFXUVywHJv1I9w+EQgQPmgTUpsw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ynhIR1TZwRfGrVUi6gNt+Mj1DjIYhRagihsmg9WnZFrVd0+I7mwTNgeh0e2zSqL9JFTTcwClcrsPhyEyABz85+wOjcyYmEA9q0SWPv8F4VvnlIbtlZN1o/ycIRvxJaiIJY9kYHDhlpykzduGJoScAJTDxk395E/YrnqmqObHJ0k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="690bd44b9ebc6c174ed41e36396cbc49e801a7f106da48e215c5b71fc712c3dd" Description="" Url=""><as:assemblyIdentity name="HOT.exe" version="1.0.0.1" publicKeyToken="65ac5a5ddbfe3305" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=HISSOFT\doctor</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>IpsnUknNWmEd5fnaRYY7DAKcLtzl7a42X0I1xiwHpvI=</DigestValue></Reference></SignedInfo><SignatureValue>EU0z7SRQCoPbu2pdLBmluPX5AFRdDzhgUVoyCSBtej+ymT+F3W6rDwhu53K/SOIK3fcFZNwcZvY14EPs2m0NRHCJ6ew03+Wnv5TNwf0BzB6EH2YDkgHLRlX+t3qctktmQ71jAxBvogoL8RTW5MHL4//Rbv6cCL95I/p+bR7WcQU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ynhIR1TZwRfGrVUi6gNt+Mj1DjIYhRagihsmg9WnZFrVd0+I7mwTNgeh0e2zSqL9JFTTcwClcrsPhyEyABz85+wOjcyYmEA9q0SWPv8F4VvnlIbtlZN1o/ycIRvxJaiIJY9kYHDhlpykzduGJoScAJTDxk395E/YrnqmqObHJ0k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQTBl7Ms6o+IhImriXSoOdQTANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwASABJAFMAUwBPAEYAVABcAGQAbwBjAHQAbwByMB4XDTIxMTEyMTA2MTAzNloXDTIyMTEyMTEyMTAzNlowJzElMCMGA1UEAx4cAEgASQBTAFMATwBGAFQAXABkAG8AYwB0AG8AcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAynhIR1TZwRfGrVUi6gNt+Mj1DjIYhRagihsmg9WnZFrVd0+I7mwTNgeh0e2zSqL9JFTTcwClcrsPhyEyABz85+wOjcyYmEA9q0SWPv8F4VvnlIbtlZN1o/ycIRvxJaiIJY9kYHDhlpykzduGJoScAJTDxk395E/YrnqmqObHJ0kCAwEAATANBgkqhkiG9w0BAQsFAAOBgQC/xa7eHHJkc29vuNM14olBG2SUecMI18CL1CUZUwZrq/9d9wZOe1gIuMHhNqwTYHPX9OCFEoQ+stPo1awYow3U/6852iaYt5cri3gv7jIDbKlgIQOGwGw7raiEQa3uV7EvXsE7lrvJ7Bfbg14cF627bEO0AT42Q0t9EEUPesjcXQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

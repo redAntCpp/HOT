@@ -1,0 +1,238 @@
+﻿<Window x:Class="HOT.HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:microtools="clr-namespace:MicroTools;assembly=MicroTools"
+        xmlns:HOTControlLibrary="clr-namespace:HOTControlLibrary;assembly=HOTControlLibrary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"   
+        WindowStyle="None">
+
+    <!-- 引用资源文件-->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DefaultThemes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Popup x:Name="UserInfo_Popup" PopupAnimation="Slide" Width="100" Height="100" 
+               Placement="Bottom" AllowsTransparency="True" StaysOpen="False">
+        </Popup>
+
+        <!-- 定义上方工具栏 -->
+        <Grid Name="main_toolbar" Grid.Row="0" Background="#31C37C" MouseLeftButtonDown="main_toolbar_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- 左上角内容设置-->
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Grid Margin="20 0 0 0" >
+
+                </Grid>
+                <StackPanel Orientation="Vertical"   VerticalAlignment="Center" Margin="6 0 0 0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Name="TextBlock_UserName" Text="HOT" Foreground="White" VerticalAlignment="Center" FontSize="16"/>
+                    </StackPanel>
+                    <TextBlock Text="广州市第一人民医院（信息中心）" Foreground="#95EDD8" VerticalAlignment="Center" Margin="0 2 0 0"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Grid Grid.Column="2" Background='#31C37C'>
+                <StackPanel  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <!-- Margin '左上右下'-->
+                    <Rectangle RadiusX="65" RadiusY="65" Width="35" Height="35" Margin="0,0,20,0" >
+                        <Rectangle.Fill>
+                            <!--头像路径-->
+                            <ImageBrush x:Name="HeadImage" ImageSource="Resources/Images/toolbar/head_default.png" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock Text="redAnt" Foreground="White" VerticalAlignment="Center" FontSize="16" Margin="0 0 10 0"/>
+                    <microtools:ImageButton NormalImagePath="/HOT;component/Resources/Images/toolbar/message_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/toolbar/message_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/toolbar/message_press.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/toolbar/message_normal.png"
+                                        ImageSize="30" Margin="0 0 6 0" 
+                                        ToolTip="系统通知"/>
+                    <microtools:ImageButton NormalImagePath="/HOT;component/Resources/Images/toolbar/mainmenu_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/toolbar/mainmenu_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/toolbar/mainmenu_press.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/toolbar/mainmenu_normal.png"
+                                        ImageSize="30" Margin="0 0 6 0" 
+                                        ToolTip="主菜单"/>
+
+                    <Rectangle Width="2" Height="30" Margin="0 0 6 0">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="Resources/Images/toolbar/line.png" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <!-- 个性化，最大化最小化-->
+                    <microtools:ImageButton NormalImagePath="/HOT;component/Resources/Images/toolbar/minsize_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/toolbar/minsize_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/toolbar/minsize_press.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/toolbar/minsize_normal.png"
+                                        ImageSize="28" Margin="0 0 6 0" 
+                                        Click="Btn_MinWindow_Click" 
+                                        ToolTip="最小化"/>
+                    <microtools:ImageButton Name="btn_mainmax"
+                                        NormalImagePath="/HOT;component/Resources/Images/toolbar/maximize_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/toolbar/maximize_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/toolbar/maximize_press.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/toolbar/maximize_normal.png"
+                                        ImageSize="28" Margin="0 0 6 0" Click="Btn_MaxWindow_Click" 
+                                        ToolTip="最大化"/>
+                    <microtools:ImageButton NormalImagePath="/HOT;component/Resources/Images/toolbar/close_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/toolbar/close_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/toolbar/close_press.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/toolbar/close_normal.png"
+                                        ImageSize="28" Margin="0 0 6 0" Click="Btn_CloseWindow_Click" 
+                                        ToolTip="关闭"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!--处理第二行网格-->
+
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" >
+                <ScrollViewer VerticalScrollBarVisibility="Visible" >
+                    <StackPanel Name="main_function" Orientation="Vertical">
+                        <Label Content="核心功能" Foreground="#A7A7A7" Padding="25 0 0 0" VerticalContentAlignment="Center"   Height="40" />
+                        <microtools:TabItemButtonOne Checked="tab_HomePage_checked" Content="首页" ImagePath="/HOT;component/Resources/Images/tabitems/home.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+                        <microtools:TabItemButtonOne Checked="tab_File_checked" Content="传输助手" ImagePath="/HOT;component/Resources/Images/tabitems/up-down-arrow.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+                        <microtools:TabItemButtonOne Checked="tab_Chat_checked" Content="聊天室" ImagePath="/HOT;component/Resources/Images/tabitems/chat.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+                        <microtools:TabItemButtonOne Checked="tab_Write_checked" Content="Markdown" ImagePath="/HOT;component/Resources/Images/tabitems/edit.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+                        <Expander  Foreground="#A7A7A7"  x:Name="Expander_Dictionary">
+                            <Expander.Header>
+                                <Grid Margin="20,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="基础字典" VerticalAlignment="Center"/>
+                                    <microtools:ImageButton Grid.Column="1"
+                                        NormalImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/tabitems/add_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        ImageSize="18" VerticalAlignment="Center"
+                                        ToolTip="新增字典表" HorizontalAlignment="Right" Width="28"/>
+                                </Grid>
+
+                            </Expander.Header>
+                            <!--定义Expander内的内容-->
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+                                <microtools:TabItemButtonOne Checked="tab_OPDepartment_checked" Content="门诊科室" ImagePath="/HOT;component/Resources/Images/tabitems/department.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems"/>
+                                <microtools:TabItemButtonOne Checked="tab_OPPatient_checked" Content="患者信息" ImagePath="/HOT;component/Resources/Images/tabitems/patient.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems"/>
+                                <microtools:TabItemButtonOne Checked="tab_MedicareContents_checked" Content="医保目录" ImagePath="/HOT;component/Resources/Images/tabitems/content.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems"/>
+                                <microtools:TabItemButtonOne Checked="tab_Interface_checked" Content="接口列表" ImagePath="/HOT;component/Resources/Images/tabitems/library.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems"/>
+                                <microtools:TabItemButtonOne Checked="tab_Others_checked" Content="其他字典" ImagePath="/HOT;component/Resources/Images/tabitems/library.png" ImageSize="18" Background="#31C27C" Height="32" HorizontalAlignment="Stretch" GroupName="mainitems"/>
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander  Foreground="#A7A7A7"  x:Name="Expander_Function">
+                            <Expander.Header>
+                                <Grid Margin="20,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="5*" />
+                                        <ColumnDefinition Width="22*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="功能列表" VerticalAlignment="Center" Margin="0,1"/>
+                                    <microtools:ImageButton Grid.Column="2"
+                                        NormalImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/tabitems/add_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        ImageSize="18" VerticalAlignment="Center"
+                                        ToolTip="新增功能" HorizontalAlignment="Right" Width="28"/>
+                                </Grid>
+
+                            </Expander.Header>
+                            <!--定义Expander内的内容-->
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+                                <microtools:TabItemButtonOne Checked="tab_OPDressing_checked" Content="门诊换药" ImagePath="/HOT;component/Resources/Images/tabitems/nurse.png" ImageSize="18"  Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+                                <microtools:TabItemButtonOne Name="PatientCaseInfo" Checked="tab_OPPatientCase_checked" Content="就诊信息" ImagePath="/HOT;component/Resources/Images/tabitems/nurse.png" ImageSize="18"  Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+
+                            </StackPanel>
+                        </Expander>
+                        <Expander  Foreground="#A7A7A7"  x:Name="Expander_Report">
+                            <Expander.Header>
+                                <Grid Margin="20,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="5*" />
+                                        <ColumnDefinition Width="22*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="报表查询" VerticalAlignment="Center" Margin="0,1"/>
+                                    <microtools:ImageButton Grid.Column="2"
+                                        NormalImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/tabitems/add_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        ImageSize="18" VerticalAlignment="Center"
+                                        ToolTip="新增功能" HorizontalAlignment="Right" Width="28"/>
+                                </Grid>
+
+                            </Expander.Header>
+                            <!--定义Expander内的内容-->
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+                                <microtools:TabItemButtonOne Checked="tab_OPDressing_checked" Content="报表1" ImagePath="/HOT;component/Resources/Images/tabitems/nurse.png" ImageSize="18"  Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+                                <microtools:TabItemButtonOne Name="P"  Content="报表2" ImagePath="/HOT;component/Resources/Images/tabitems/nurse.png" ImageSize="18"  Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+
+                            </StackPanel>
+                        </Expander>
+                        <Expander  Foreground="#A7A7A7"  x:Name="Expander_DocumentManagement">
+                            <Expander.Header>
+                                <Grid Margin="20,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="5*" />
+                                        <ColumnDefinition Width="22*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="文档管理" VerticalAlignment="Center" Margin="0,1"/>
+                                    <microtools:ImageButton Grid.Column="2"
+                                        NormalImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png" 
+                                        HoverImagePath="/HOT;component/Resources/Images/tabitems/add_hover.png"
+                                        PressImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        DisableImagePath="/HOT;component/Resources/Images/tabitems/add_normal.png"
+                                        ImageSize="18" VerticalAlignment="Center"
+                                        ToolTip="新增功能" HorizontalAlignment="Right" Width="28"/>
+                                </Grid>
+
+                            </Expander.Header>
+                            <!--定义Expander内的内容-->
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+                                <microtools:TabItemButtonOne Content="需求文档" ImagePath="/HOT;component/Resources/Images/tabitems/nurse.png" ImageSize="18"  Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+                                <microtools:TabItemButtonOne Content="方案文档" ImagePath="/HOT;component/Resources/Images/tabitems/nurse.png" ImageSize="18"  Height="32" HorizontalAlignment="Stretch" GroupName="mainitems" Cursor="Hand"/>
+
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Column="1"  Name="grid_mainScreen">
+                
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
+</Window>

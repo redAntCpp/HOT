@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B52252E-B55F-465B-8AC5-71596C1B1441}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HOT</RootNamespace>
+    <AssemblyName>HOT</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>HOT</ProductName>
+    <PublisherName>redAnt</PublisherName>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A386BB5D341596448DBC8799530FA007C72D0A80</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HOT_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>HOT.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HOTControlLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>HOTControl\HOTControlLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroTools">
+      <HintPath>C:\Users\doctor\Desktop\MicroTools.dll</HintPath>
+    </Reference>
+    <Reference Include="MyCustomControlLibrary">
+      <HintPath>HOTControl\MyCustomControlLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Users\doctor\Desktop\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Config\HOTConfig.cs" />
+    <Compile Include="Config\IConfig.cs" />
+    <Compile Include="HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="lib\CryptoHelper.cs" />
+    <Compile Include="lib\HOTException.cs" />
+    <Compile Include="lib\HttpService.cs" />
+    <Compile Include="lib\JsonHelper.cs" />
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageWin\Confirm.xaml.cs">
+      <DependentUpon>Confirm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageWin\EditAccountList.xaml.cs">
+      <DependentUpon>EditAccountList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabTestWin.xaml.cs">
+      <DependentUpon>TabTestWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_OPPatientCaseHistory.xaml.cs">
+      <DependentUpon>UC_OPPatientCaseHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_PatientCaseInfo.xaml.cs">
+      <DependentUpon>UC_PatientCaseInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_SearchData.xaml.cs">
+      <DependentUpon>UC_SearchData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_ShowData.xaml.cs">
+      <DependentUpon>UC_ShowData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_ShowWeb.xaml.cs">
+      <DependentUpon>UC_ShowWeb.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DefaultThemes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lib\LogHelper.cs" />
+    <Compile Include="lib\SqlServerHelper.cs" />
+    <Page Include="MessageWin\Confirm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageWin\EditAccountList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabTestWin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UC_OPPatientCaseHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UC_PatientCaseInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UC_SearchData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UC_ShowData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UC_ShowWeb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="HOT_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\common\crate_batch_click.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\common\crate_batch_hover.png" />
+    <Resource Include="Resources\Images\common\crate_batch_normal.png" />
+    <Resource Include="Resources\Images\common\White_Download_click.png" />
+    <Resource Include="Resources\Images\common\White_Download_hover.png" />
+    <Resource Include="Resources\Images\common\White_Download_normal.png" />
+    <Resource Include="Resources\Images\common\White_PlayAll_click.png" />
+    <Resource Include="Resources\Images\common\White_PlayAll_hover.png" />
+    <Resource Include="Resources\Images\common\White_PlayAll_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\downbar\AudioEffect\3D_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\3D_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\AESliderback_h.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\AESliderdrag.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\AESliderfore_h.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\ae_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\ae_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\Bass_Detail.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\bass_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\bass_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\blues_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\blues_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\classical_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\classical_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\country_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\country_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\custom_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\custom_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\dance_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\dance_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\electronic_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\electronic_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\EqSliderback_h.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\EqSliderback_v.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\EqSliderdrag.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\EqSliderfore_h.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\EqSliderfore_v.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\equalizer_tab_pushed.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\equalizer_tab_unpushed.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_blues_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_classical_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_country_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_customize_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_dance_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_electronic_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_jazz_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_new.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_popular_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_rock_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_select.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\eq_slow_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\FloatWnd_new.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\FloatWnd_select.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\jazz_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\jazz_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\More_Detail.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\null.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\Null_Detail.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\popular_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\popular_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\retro_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\retro_norml.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\rock_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\rock_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\scene_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\scene_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\select.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\Selected.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\slow_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\slow_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\Studio_Detail.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_hyperbass_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_retro_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_select.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_studio_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_surround_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_tab_pushed.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_tab_unpushed.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_vocal_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_warm_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\supersound_wide_background.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\Surround_Detail.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\switch_floatwnd_off.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\switch_off.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\switch_on.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\unSelected.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\Vocal_Detail.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\vocal_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\vocal_normal.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\warm_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\warm_norml.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\wide_hover.png" />
+    <Resource Include="Resources\Images\downbar\AudioEffect\wide_normal.png" />
+    <Resource Include="Resources\Images\downbar\download_white_click.png" />
+    <Resource Include="Resources\Images\downbar\download_white_hover.png" />
+    <Resource Include="Resources\Images\downbar\download_white_normal.png" />
+    <Resource Include="Resources\Images\downbar\favor_hover.png" />
+    <Resource Include="Resources\Images\downbar\favor_normal.png" />
+    <Resource Include="Resources\Images\downbar\favor_red_hover.png" />
+    <Resource Include="Resources\Images\downbar\horn_click.png" />
+    <Resource Include="Resources\Images\downbar\horn_hover.png" />
+    <Resource Include="Resources\Images\downbar\horn_normal.png" />
+    <Resource Include="Resources\Images\downbar\list_circulation_hover.png" />
+    <Resource Include="Resources\Images\downbar\list_circulation_normal.png" />
+    <Resource Include="Resources\Images\downbar\lyric.png" />
+    <Resource Include="Resources\Images\downbar\lyrics_click.png" />
+    <Resource Include="Resources\Images\downbar\lyrics_hover.png" />
+    <Resource Include="Resources\Images\downbar\more_click.png" />
+    <Resource Include="Resources\Images\downbar\more_hover.png" />
+    <Resource Include="Resources\Images\downbar\more_normal.png" />
+    <Resource Include="Resources\Images\downbar\next_click.png" />
+    <Resource Include="Resources\Images\downbar\next_hover.png" />
+    <Resource Include="Resources\Images\downbar\next_normal.png" />
+    <Resource Include="Resources\Images\downbar\Normal_click.png" />
+    <Resource Include="Resources\Images\downbar\Normal_disable.png" />
+    <Resource Include="Resources\Images\downbar\Normal_hover.png" />
+    <Resource Include="Resources\Images\downbar\Normal_normal.png" />
+    <Resource Include="Resources\Images\downbar\playing_list_click.png" />
+    <Resource Include="Resources\Images\downbar\playing_list_hover.png" />
+    <Resource Include="Resources\Images\downbar\playing_list_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\list_circulation_hover.png" />
+    <Resource Include="Resources\Images\downbar\playmode\list_circulation_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\list_circulation_selected_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\random_circulation_hover.png" />
+    <Resource Include="Resources\Images\downbar\playmode\random_circulation_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\random_circulation_selected_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\sequence_circulation_hover.png" />
+    <Resource Include="Resources\Images\downbar\playmode\sequence_circulation_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\sequence_circulation_selected_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\single_song_circulation_hover.png" />
+    <Resource Include="Resources\Images\downbar\playmode\single_song_circulation_normal.png" />
+    <Resource Include="Resources\Images\downbar\playmode\single_song_circulation_selected_normal.png" />
+    <Resource Include="Resources\Images\downbar\play_click.png" />
+    <Resource Include="Resources\Images\downbar\play_hover.png" />
+    <Resource Include="Resources\Images\downbar\play_normal.png" />
+    <Resource Include="Resources\Images\downbar\pre_click.png" />
+    <Resource Include="Resources\Images\downbar\pre_hover.png" />
+    <Resource Include="Resources\Images\downbar\pre_normal.png" />
+    <Resource Include="Resources\Images\downbar\random_hover.png" />
+    <Resource Include="Resources\Images\downbar\random_normal.png" />
+    <Resource Include="Resources\Images\downbar\sequence_hover.png" />
+    <Resource Include="Resources\Images\downbar\sequence_normal.png" />
+    <Resource Include="Resources\Images\downbar\set.png" />
+    <Resource Include="Resources\Images\downbar\song_circulation_hover.png" />
+    <Resource Include="Resources\Images\downbar\song_circulation_normal.png" />
+    <Resource Include="Resources\Images\downbar\volume_large.png" />
+    <Resource Include="Resources\Images\downbar\volume_mute.png" />
+    <Resource Include="Resources\Images\downbar\volume_normal.png" />
+    <Resource Include="Resources\Images\downbar\volume_zero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\login\close.png" />
+    <Resource Include="Resources\Images\login\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\tabitems\add_hover.png" />
+    <Resource Include="Resources\Images\tabitems\add_normal.png" />
+    <Resource Include="Resources\Images\tabitems\chat.png" />
+    <Resource Include="Resources\Images\tabitems\content.png" />
+    <Resource Include="Resources\Images\tabitems\department.png" />
+    <Resource Include="Resources\Images\tabitems\device_normal.png" />
+    <Resource Include="Resources\Images\tabitems\discover_normal.png" />
+    <Resource Include="Resources\Images\tabitems\download_white_normal.png" />
+    <Resource Include="Resources\Images\tabitems\down_hover.png" />
+    <Resource Include="Resources\Images\tabitems\down_normal.png" />
+    <Resource Include="Resources\Images\tabitems\edit.png" />
+    <Resource Include="Resources\Images\tabitems\home.png" />
+    <Resource Include="Resources\Images\tabitems\library.png" />
+    <Resource Include="Resources\Images\tabitems\musicHall_normal.png" />
+    <Resource Include="Resources\Images\tabitems\mv_normal.png" />
+    <Resource Include="Resources\Images\tabitems\patient.png" />
+    <Resource Include="Resources\Images\tabitems\radio_normal.png" />
+    <Resource Include="Resources\Images\tabitems\songlist_Normal.png" />
+    <Resource Include="Resources\Images\tabitems\songlist_Selected.png" />
+    <Resource Include="Resources\Images\tabitems\up-down-arrow.png" />
+    <Resource Include="Resources\Images\tabitems\up_hover.png" />
+    <Resource Include="Resources\Images\tabitems\up_normal.png" />
+    <Resource Include="Resources\Images\tabitems\wesing_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\toolbar\close.jpg" />
+    <Resource Include="Resources\Images\toolbar\close_hover.png" />
+    <Resource Include="Resources\Images\toolbar\close_normal.png" />
+    <Resource Include="Resources\Images\toolbar\close_press.png" />
+    <Resource Include="Resources\Images\toolbar\head_default.png" />
+    <Resource Include="Resources\Images\toolbar\head_hover.png" />
+    <Resource Include="Resources\Images\toolbar\head_normal.png" />
+    <Resource Include="Resources\Images\toolbar\line.png" />
+    <Resource Include="Resources\Images\toolbar\mainmenu_hover.png" />
+    <Resource Include="Resources\Images\toolbar\mainmenu_normal.png" />
+    <Resource Include="Resources\Images\toolbar\mainmenu_press.png" />
+    <Resource Include="Resources\Images\toolbar\maximize_hover.png" />
+    <Resource Include="Resources\Images\toolbar\maximize_normal.png" />
+    <Resource Include="Resources\Images\toolbar\maximize_press.png" />
+    <Resource Include="Resources\Images\toolbar\message_hover.png" />
+    <Resource Include="Resources\Images\toolbar\message_normal.png" />
+    <Resource Include="Resources\Images\toolbar\message_press.png" />
+    <Resource Include="Resources\Images\toolbar\mini_hover.png" />
+    <Resource Include="Resources\Images\toolbar\mini_normal.png" />
+    <Resource Include="Resources\Images\toolbar\mini_press.png" />
+    <Resource Include="Resources\Images\toolbar\minsize_hover.png" />
+    <Resource Include="Resources\Images\toolbar\minsize_normal.png" />
+    <Resource Include="Resources\Images\toolbar\minsize_press.png" />
+    <Resource Include="Resources\Images\toolbar\NavBack_hover.png" />
+    <Resource Include="Resources\Images\toolbar\NavBack_normal.png" />
+    <Resource Include="Resources\Images\toolbar\NavBack_press.png" />
+    <Resource Include="Resources\Images\toolbar\NavNext_hover.png" />
+    <Resource Include="Resources\Images\toolbar\NavNext_normal.png" />
+    <Resource Include="Resources\Images\toolbar\NavNext_press.png" />
+    <Resource Include="Resources\Images\toolbar\normal_hover.png" />
+    <Resource Include="Resources\Images\toolbar\normal_normal.png" />
+    <Resource Include="Resources\Images\toolbar\normal_press.png" />
+    <Resource Include="Resources\Images\toolbar\refresh_click.png" />
+    <Resource Include="Resources\Images\toolbar\refresh_hover.png" />
+    <Resource Include="Resources\Images\toolbar\refresh_normal.png" />
+    <Resource Include="Resources\Images\toolbar\search.png" />
+    <Resource Include="Resources\Images\toolbar\search_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\eq_blues_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\common\edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\tabitems\nurse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HOT.ico" />
+    <Content Include="HOTControl\HOTControlLibrary.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

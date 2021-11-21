@@ -1,0 +1,5 @@
+#忽略obj文件，log文件
+.vs/
+HOT.sln
+Logs/
+obj/
